@@ -8,10 +8,17 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SearchPage } from '../pages/search/search';
 import { SettingsPage } from '../pages/settings/settings';
+import { ContactusPage } from '../pages/contactus/contactus';
+import { ArtistPage } from '../pages/artist/artist';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ItunesProvider } from '../providers/itunes/itunes';
+
+import { PreviewModal } from '../pages/search/preview';
+import { LanguageSetting } from '../pages/settings/language';
+
+import { ToSymbolPipe } from '../pipes/to-symbol/to-symbol';
 
 @NgModule({
   declarations: [
@@ -19,7 +26,11 @@ import { ItunesProvider } from '../providers/itunes/itunes';
     HomePage,
     ListPage,
     SearchPage,
-    SettingsPage
+    SettingsPage,
+    PreviewModal,
+    ContactusPage,
+    ArtistPage,
+    ToSymbolPipe
   ],
   imports: [
     BrowserModule,
@@ -33,7 +44,10 @@ import { ItunesProvider } from '../providers/itunes/itunes';
     HomePage,
     ListPage,
     SearchPage,
-    SettingsPage
+    SettingsPage,
+    PreviewModal,
+    ContactusPage,
+    ArtistPage
   ],
   providers: [
     StatusBar,
@@ -41,8 +55,8 @@ import { ItunesProvider } from '../providers/itunes/itunes';
     HttpModule,
     JsonpModule,
     ItunesProvider,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ItunesProvider
+    LanguageSetting,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}

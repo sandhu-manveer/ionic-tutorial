@@ -1,0 +1,30 @@
+<!--
+  Generated template for the ContactusPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>contactus</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="contactForm">
+    <ion-item fixed-label>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" formControlName="name"></ion-input>
+    </ion-item>
+    <p [hidden]="contactForm.controls.name.untouched">Please provide your name</p>
+    <ion-item fixed-label>
+      <ion-label>Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <p [hidden]="contactForm.controls.email.pristine">Please provide your name</p>
+    <button ion-button (click)="submitForm()">Send</button>
+  </form>
+</ion-content>
